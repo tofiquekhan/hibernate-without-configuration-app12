@@ -1,10 +1,22 @@
 package myproject.employee.pojo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "emp1")
 public class Employee {
 
+	@Id
+	@Column(name = "eno")
 	private int eno;
+	@Column(name = "ename")
 	private String ename;
+	@Column(name = "esal")
 	private float esal;
+	@Column(name = "eaddr")
 	private String eaddr;
 	public int getEno() {
 		return eno;

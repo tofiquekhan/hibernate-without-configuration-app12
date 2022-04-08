@@ -21,15 +21,16 @@ public class Test {
 		cfg.setProperty("hibernate.connection.password", "tiger");
 		cfg.setProperty("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
 		cfg.setProperty("hibernate.show_sql", "true");
-		cfg.addResource("myproject/employee/resources/Employee.hbm.xml");
+//		cfg.addResource("myproject/employee/resources/Employee.hbm.xml");
+		cfg.addAnnotatedClass(Employee.class);
 		sessionFactory = cfg.buildSessionFactory();
 		session = sessionFactory.openSession();
 		tx = session.beginTransaction();
 		Employee emp = new Employee();
-		emp.setEno(102);
-		emp.setEname("Mohit");
+		emp.setEno(103);
+		emp.setEname("Garima");
 		emp.setEsal(75412);
-		emp.setEaddr("Dewas");
+		emp.setEaddr("Indore");
 		session.save(emp);
 		tx.commit();
 		}catch (Exception e) {
